@@ -1,0 +1,62 @@
+.team
+  background-color: $minor-bg
+  padding: 125px 0px 118px 0px
+
+.staff
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.employee
+  max-width: 270px
+  &__photo
+    margin-bottom: 25px
+  &__title
+    margin-bottom: 5px
+    color: $strong-text
+    font-size: 22px
+    +bold
+  &__subtitle
+    color: $main-color
+    font-size: 13px
+    text-transform: uppercase
+    +reg
+  &__description
+    margin: 22px 0px 26px 0px
+    color: $minor-text
+    font-size: 14px
+    line-height: 1.5
+
+.social
+  display: flex
+  &__link
+    width: 40px
+    height: 40px
+    background-color: $light-color
+    border: 1px solid #e8ecee
+    color: #c6cacc
+    margin-right: 4px
+    display: flex
+    align-items: center
+    justify-content: center
+    text-decoration: none
+
+//hover
+.fab
+  &:hover
+    color: $main-color
+
+@media (max-width: 1200px)
+  .employee
+    margin-bottom: 15px
+  .staff
+    justify-content: space-around
+
+@media (max-width: 768px)
+  .staff
+    flex-direction: column
+    align-items: center
+  
+@media (max-width: 384px)
+  .team
+    padding: 95px 0px 80px 0px

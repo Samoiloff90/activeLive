@@ -1,0 +1,165 @@
+.main
+  background-image: url(../img/header/background.jpg)
+  padding: 7px 0px 243px 0px
+  background-repeat: no-repeat
+  background-size: cover
+  color: $light-color
+
+.hat 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 190px
+  position: relative
+  &::after
+    content: ""
+    display: block
+    width: 100%
+    height: 1px
+    background-color: $light-color
+    position: absolute
+    bottom: -9%
+    opacity: 0.2
+
+.navigation 
+  list-style-type: none
+  display: flex
+  text-transform: uppercase
+  font-size: 14px
+  margin: 0
+  &__item
+    position: relative
+    padding: 35px
+    cursor: pointer
+    &:last-child
+      margin: 0
+    &::after
+      content: ""
+      position: absolute
+      height: 3px
+      right: -20px
+      width: 150px
+      background-color: $light-color
+      bottom: -8%
+      opacity: 0
+  &__link
+    text-decoration: none
+    color: $light-color
+    position: relative
+
+.navigation__item
+  &:hover
+    &::after
+      transition: all 0.5s ease
+      opacity: 0.7
+
+.logo
+  display: block
+  width: 160px
+  height: 21px
+
+.offer
+  text-align: center
+  &__title
+    text-transform: uppercase
+    font-size: 45px
+    margin-bottom: 35px
+    +bold
+  &__subtitle
+    font-size: 22px
+    max-width: 545px
+    margin: 0 auto
+    margin-bottom: 30px
+    line-height: 1.4
+  &__btn
+    min-width: 200px
+    &:hover
+      transition: all 0.5s ease
+      background-color: $light-color
+      color: $main-color
+
+
+.burger
+  position: absolute
+  right: 10px
+  top: 10px
+  width: 40px
+  height: 50px
+  cursor: pointer
+  opacity: 0
+  &__line, &__line::after, &__line::before
+    width: 100%
+    position: absolute
+    height: 2px
+    background: $light-color
+    display: block
+    transition: .3s
+    border-radius: 5px
+  &__line
+    // top: 10px
+    &::before
+      content: ""
+      top: -10px
+      transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+    &::after
+      content: ""
+      bottom: -10px
+      transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+// animation burger
+.burger__line.active
+  background: rgba(255, 255, 255, 0)
+  &:before
+    content: ""
+    top: 0px
+    transform: rotate(45deg)
+    transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  &:after
+    content: ""
+    bottom: 0
+    transform: rotate(-45deg)
+    transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+
+
+@media (max-width: 800px)
+  .main
+    padding: 35px 0px 243px 0px
+  .navigation
+    display: none
+    &__item
+      &::after
+        display: none
+  .logo__img
+    width: 80%
+  .hat 
+    &::after
+      bottom: -70%
+  .burger
+    opacity: 1
+  .navigation
+    display: block
+    position: absolute
+    background-color: $overlay
+    top: 160%
+    width: 100%
+    opacity: 0
+    &_active
+      opacity: 1
+    
+
+
+
+@media (max-width: 384px)
+  .main
+    padding: 40px 0px 120px 0px
+  .hat 
+    margin-bottom: 120px
+  .offer
+    text-align: center
+    &__title
+      font-size: 29px
+      margin-bottom: 29px
+    &__subtitle
+      font-size: 20px
+

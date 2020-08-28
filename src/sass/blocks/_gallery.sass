@@ -1,0 +1,81 @@
+.gallery
+  padding-bottom: 103px
+  &-wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+.project
+  width: 270px
+  height: 211px
+  text-align: center
+  color: $light-color
+  margin-bottom: 26px
+    
+  &_one
+    background-image: url(../img/photo/photo1.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_two
+    background-image: url(../img/photo/photo2.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_three
+    background-image: url(../img/photo/photo3.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_four
+    background-image: url(../img/photo/photo4.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_five
+    background-image: url(../img/photo/photo5.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_six
+    background-image: url(../img/photo/photo6.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_seven
+    background-image: url(../img/photo/photo7.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_eight
+    background-image: url(../img/photo/photo8.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+  &_opacity
+    padding: 84px 0px
+    background-color: $main-color-opacity
+    opacity: 0
+    cursor: pointer
+
+  //   &:hover
+  //     opacity: 1
+      
+  &__title
+    text-transform: uppercase
+    font-size: 14px
+    margin-bottom: 12px
+    +bold
+  &__subtitle
+    font-size: 14px
+
+
+// hover
+.project:hover .project_opacity
+  opacity: 1
+  transition: all 0.5s ease
+
+@media (max-width: 1200px)
+  .gallery
+    &-wrap
+      justify-content: space-around
+@media (max-width: 768px)
+  .gallery
+    &-wrap
+      flex-direction: column
+      align-items: center
+@media (max-width: 384px)
+  .gallery
+    padding-bottom: 80px
